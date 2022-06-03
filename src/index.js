@@ -1,3 +1,7 @@
-import generateJoke from "./generateJoke";
+import generateJoke from './generateJoke'
+import './styles/main.scss'
+
 
 console.log(generateJoke())
+
+
