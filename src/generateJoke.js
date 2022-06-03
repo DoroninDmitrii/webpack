@@ -1,6 +1,5 @@
 function generateJoke() {
-  return "I will approach my goals!"
+  return "Joke-Joke-Joke!!!"
 }
-
 
 export default generateJoke
