@@ -10,16 +10,17 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js',
     clean: true,
+    assetModuleFilename: '[name][ext]'
   },
   devtool: 'source-map',
   devServer: {
     static: {
-      directory: path.resolve(__dirname, 'dist')
+      directory: path.resolve(__dirname, 'dist'),
     },
-    port: 3000,
+    port: 4000,
     open: true,
-    hot: true,
     compress: true,
+    hot: true,
     historyApiFallback: true,
   },
   module: {
@@ -34,9 +35,13 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presents: ['@babel/preset-env']
+            presets: ['@babel/preset-env'],
           }
         }
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
       }
     ],
   },
